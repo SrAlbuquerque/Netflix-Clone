@@ -1,99 +1,163 @@
-:root{
-  --vermelho: #E50914;
-  --preto: #141414;
+:root {
+  --primary-color: #e50904;
+  --dark-color: #141414;
+  --light-color: #f4f4f4;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/*elementos base*/
-body{
-  background: var(--preto);
-  font-family: 'Times New Roman', Times, serif;
-  color: white;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #999;
 }
 
-header .container{
- display: flex;
- flex-direction: row;
- align-items: center;
- justify-content: space-between;
+ul {
+  list-style: none;
 }
 
-header .logo{
-  color: var(--vermelho);
-  font-family: "Arial Black";
-  font-size: 35px;
-  margin-left: 5px;
-}
-
-header nav a{
-  text-decoration: none;
-  color: #aaa;
-  margin-right: 10px;
-}
-
-header nav a:hover{
+h1,
+h2,
+h3,
+h4 {
   color: #fff;
 }
 
-/*filme principal*/
+h3 {
+  font-weight: lighter;
+}
 
-.filme-principal {
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+}
+
+.showcase {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("/img/wallpaper-netflix.jpg") no-repeat center center/cover;
+}
+
+.showcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 120px 100px 250px #000, inset -120px -100px 250px #000;
+}
+
+.showcase-top {
+  position: relative;
+  z-index: 2;
+  height: 90px;
+}
+
+.showcase-top img {
+  width: 140px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(40%, -50%);
+}
+
+.showcase-top a {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-60%, -50%);
+}
+
+.showcase-content {
+  position: relative;
+  margin: 0 26%;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  font-size: 16px;
-  background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%),url(/img/peaky-blinders-wallpaper.jpg);
-  height: 400px;
-  background-size: cover;
+  text-align: center;
+  align-items: center;
+  margin-top: 9rem;
 }
 
-.filme-principal .descricao {
-  margin-top: 10px;
-  margin-bottom: 40px;
+.showcase-content h1 {
+  font-weight: 700;
+  font-size: 64px;
+  margin: 0 30px;
+  max-width: 800px;
+  line-height: 74.5px;
 }
 
-.filme-principal .titulo {
-  font-size: 40px;
-  margin-top: 10%;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.botao{
-  background-color: rgba(0,0,0,.50);
+.showcase-content h3 {
   color: white;
-  padding: 12px;
+  font-size: 25px;
+  margin: 16px 0;
+}
+
+.showcase-content p {
+  font-size: 19.2px;
+  font-weight: 300;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.showcase-content input {
+  position: absolute;
+  left: 10vh;
+  bottom: -8vh;
+  width: 454px;
+  height: 3rem;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  text-align: center;
   border: none;
-  margin-right: 15px;
-  font-size: 12px;
   cursor: pointer;
-  transition: .3s ease all;
+  border-radius: 2px;
+  margin-right: 0.5rem;
+  outline: none;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.45);
 }
 
-.botao:hover{
-  background-color: #fff;
-  color: black;
+.btn:hover {
+  opacity: 0.9;
 }
 
-.botao i{
-  margin-right: 5px;
+.btn-rounded {
+  border-radius: 5px;
 }
 
-.container{
-  margin-left: 20px;
-}
-
-.filme-principal .container{
-  width: 60%;
-}
-
-.box-filme{
-  height: 100%;
-  width: 100%;
-  display: block;
+.showcase-content .btn-lg {
+  position: absolute;
+  right: 7.5vh;
+  bottom: -8vh;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  height: 36px;
+  width: 14rem;
 }
